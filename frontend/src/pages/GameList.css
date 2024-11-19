@@ -1,0 +1,189 @@
+/* Estilo da lista de jogos */
+.game-list {
+  display: flex;
+  flex-direction: column; /* Alinha os itens verticalmente */
+  gap: 20px; /* Espaçamento entre os itens */
+  padding: 20px;
+}
+
+/* Estilo de cada item da lista */
+.game-item {
+  cursor: grab;
+  background-color: #2b2b3b;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative; /* Necessário para o posicionamento do ano */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Exibe a imagem e o conteúdo lado a lado */
+  gap: 20px;
+  align-items: center;
+  padding: 15px;
+  margin: 5px 0;
+}
+
+.game-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  background-color: #353542;
+}
+
+/* Imagem dos jogos */
+.game-item img {
+  width: 100px; /* Tamanho fixo para manter a proporção */
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Conteúdo do item */
+.game-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ff6a3d;
+}
+
+.game-item p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+/* Ano dos jogos */
+.game-item-year {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #cccccc;
+  font-size: 0.9rem;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.game-year {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #ff6a3d;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+/* Estilo do seletor */
+.select-category {
+  background-color: #2b2b3b;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: block;
+  width: 100%; /* Largura total para manter responsividade */
+}
+
+.select-category:hover {
+  background-color: #ff6a3d;
+  color: #2b2b3b;
+}
+
+.select-category:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ff6a3d;
+}
+
+/* Estilo para o item em estado de arrasto */
+.game-item.dragging {
+  cursor: grabbing;
+  transform: scale(1.05) rotateZ(5deg); /* Efeito 3D com rotação */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra 3D */
+  background-color: #ff6a3d; /* Destaque */
+  z-index: 1000; /* Trazer o item para frente */
+  opacity: 0; /* Esconde o item enquanto é arrastado */
+}
+
+/* Estilo para o preview do item arrastado */
+.drag-preview {
+  position: absolute;
+  pointer-events: none; /* Evita que o cursor interaja com o preview */
+  transform: translate(-50%, -50%); /* Centraliza no cursor */
+  z-index: 1000;
+}
+
+.dragged-item {
+  background-color: #2b2b3b;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05) rotateZ(5deg); /* Efeito 3D */
+  width: 250px;
+}
+
+.dragged-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.game-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-item.dragging {
+  opacity: 0.5; /* Deixa o item arrastado mais translúcido */
+  transform: scale(1.02); /* Pequeno destaque durante o movimento */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .game-item {
+    flex-direction: column; /* Alinha itens verticalmente */
+    text-align: center;
+    gap: 10px;
+  }
+
+  .game-item img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .game-item-content h3 {
+    font-size: 1rem;
+  }
+
+  .game-item-content p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-list {
+    padding: 10px;
+  }
+
+  .game-item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .game-item-content h3 {
+    font-size: 0.9rem;
+  }
+
+  .game-item-content p {
+    font-size: 0.7rem;
+  }
+}

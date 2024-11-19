@@ -1,0 +1,122 @@
+.game-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    background-color: #2b2b3b;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 33px auto;
+}
+
+.game-details img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.game-details h1 {
+    font-size: 2rem;
+    color: #ff6a3d;
+    text-align: center;
+}
+
+/* Estilo para o score e estrelas */
+.game-score {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.game-score p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff6a3d;
+}
+
+.game-stars {
+    margin-top: 5px;
+    font-size: 1.5rem;
+    color: #FFD700; /* Amarelo dourado */
+}
+
+.star {
+    margin: 0 2px;
+}
+
+.star.filled {
+    color: #FFD700; /* Estrelas preenchidas */
+}
+
+.star.empty {
+    color: #444444; /* Estrelas vazias em cinza escuro */
+}
+
+/* Estilo adicional para os detalhes */
+.game-description {
+    font-size: 1rem;
+    color: #cccccc;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+.game-genre,
+.game-platforms {
+    color: #ff6a3d;
+    text-align: center;
+}
+
+.game-genre span,
+.game-platforms span {
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .game-details {
+        padding: 15px;
+        max-width: 90%; /* Ajusta o tamanho para dispositivos médios */
+    }
+
+    .game-details h1 {
+        font-size: 1.5rem; /* Reduz o tamanho do título */
+    }
+
+    .game-score p {
+        font-size: 1rem; /* Ajusta o tamanho do score */
+    }
+
+    .game-stars {
+        font-size: 1.2rem; /* Reduz o tamanho das estrelas */
+    }
+
+    .game-description {
+        font-size: 0.9rem; /* Ajusta a descrição para telas menores */
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-details {
+        padding: 10px;
+        max-width: 95%; /* Ajusta para dispositivos pequenos */
+    }
+
+    .game-details h1 {
+        font-size: 1.2rem; /* Reduz ainda mais o título */
+    }
+
+    .game-score p {
+        font-size: 0.9rem; /* Ajusta o tamanho do score */
+    }
+
+    .game-stars {
+        font-size: 1rem; /* Reduz o tamanho das estrelas */
+    }
+
+    .game-description {
+        font-size: 0.8rem; /* Ajusta a descrição para telas menores */
+    }
+}
