@@ -16,28 +16,24 @@ const GameDetails = () => {
 
     if (!game) return <p>Loading...</p>; // Mostra "loading" enquanto carrega
 
-    // Função para renderizar estrelas com base no score
+
+    // Função para renderizar estrelas com preenchimento proporcional
     const renderStars = (score) => {
-        const maxStars = 5;
-        const filledStars = Math.round((score / 10) * maxStars); // Converte o score de 0-10 para 0-5
-        const emptyStars = maxStars - filledStars;
+        const maxStars = 5; // Total de estrelas
+        const stars = [];
 
-        return (
-            <>
-                {Array(filledStars)
-                    .fill('★')
-                    .map((star, index) => (
-                        <span key={`filled-${index}`} className="star filled">{star}</span>
-                    ))}
-                {Array(emptyStars)
-                    .fill('☆')
-                    .map((star, index) => (
-                        <span key={`empty-${index}`} className="star empty">{star}</span>
-                    ))}
-            </>
-        );
+        for (let i = 0; i < maxStars; i++) {
+            const fill = Math.max(0, Math.min(1, score - i)); // Calcula o preenchimento de cada estrela
+            stars.push(
+                <div key={i} className="star-wrapper">
+                    <div className="star-empty">★</div>
+                    <div className="star-fill" style={{ width: `${fill * 100}%` }}>★</div>
+                </div>
+            );
+        }
+
+        return <div className="game-stars">{stars}</div>;
     };
-
     return (
         <div className="game-details">
             <h1>{game.title}</h1>
