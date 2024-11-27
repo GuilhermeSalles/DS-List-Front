@@ -1,6 +1,6 @@
 
 # DS-List Frontend 🕹️
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/GuilhermeSalles/DSList/blob/main/LICENSE)
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/GuilhermeSalles/DS-List-Front/blob/main/LICENSE)
 > Interface web desenvolvida para gerenciar e visualizar uma lista de jogos, com integração completa ao backend da aplicação [DS-List Backend](https://github.com/GuilhermeSalles/DSList).
 
 ## 🖼️ Demonstração
